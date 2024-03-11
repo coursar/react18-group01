@@ -1,14 +1,14 @@
 import { useRef, useState } from "react"
 
-const BasicRef08Debug = () => {
+// hooks -> hooks -> hooks [list]
+// mount (first render) -> update (other render)
+const BasicRef01Debug = () => {
     debugger
-    const [state, setState] = useState(0)
     const ref = useRef(100) // {current: 100}
 
     const handleClick = () => {
-        ref.current++
+        ref.current++ // no re-render
         console.log(ref)
-        setState(prevState => prevState + 1)
     }
 
     return (
@@ -18,4 +18,4 @@ const BasicRef08Debug = () => {
     )
 }
 
-export default BasicRef08Debug
+export default BasicRef01Debug

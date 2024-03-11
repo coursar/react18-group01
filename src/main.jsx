@@ -42,3 +42,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   // </React.StrictMode>,
 )
+
+// Download a file
+//  1. User Click on link -> url -> backend Content-Type application/octet-stream & other headers
+//  2. Ajax -> Blob
+
+// Upload a file
+//  1. input file="..."
+//  2. drag-and-drop (dnd)
+//  3. new API
