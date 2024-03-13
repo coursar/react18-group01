@@ -51,3 +51,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 //  1. input file="..."
 //  2. drag-and-drop (dnd)
 //  3. new API
+
+// Audio & Video
+// Audio, Image, Video
+// const audio = new Audio('url')
+// audio.play(...)
+
+const audio = new Audio('/tg_msg_incoming.mp3')
+// button click
+setTimeout(() => {
+  audio.play()
+}, 5000)
