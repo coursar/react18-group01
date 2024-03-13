@@ -66,3 +66,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+form:invalid {
+  border: 1px dashed red;
+}
+
+input:invalid {
+  border: 1px solid darkorange; 
+}
+
+form:valid {
+  border: 1px solid greenyellow;
+}
+
+input:valid {
+  border: 1px solid blue; 
+}
