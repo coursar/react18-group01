@@ -57,8 +57,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 // const audio = new Audio('url')
 // audio.play(...)
 
-const audio = new Audio('/tg_msg_incoming.mp3')
-// button click
-setTimeout(() => {
-  audio.play()
-}, 5000)
+// const audio = new Audio('/tg_msg_incoming.mp3')
+// // button click
+// setTimeout(() => {
+//   audio.play()
+// }, 5000)

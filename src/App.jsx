@@ -1,13 +1,14 @@
 import { useRef } from 'react'
 import './App.css'
 import { ErrorBoundary, ErrorOnRender } from './components/shared/ErrorBoundary' // from './components/shared/ErrorBoundary/index.js(ts)'
-import BasicRef09ForwardedRefClassBase from './showcase/functional/02ref/BasicRef09ForwardRefClassBase'
+import BasicRef12Bootstrap from './showcase/functional/02ref/BasicRef12Bootstrap'
+
 
 function App() {
   return (
     <>
       <ErrorBoundary fallback={<div>main ooops!</div>}>
-        <BasicRef09ForwardedRefClassBase></BasicRef09ForwardedRefClassBase>
+        <BasicRef12Bootstrap></BasicRef12Bootstrap>
       </ErrorBoundary>
     </>
   )
