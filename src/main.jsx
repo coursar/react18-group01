@@ -62,3 +62,66 @@ ReactDOM.createRoot(document.getElementById('root'), { identifierPrefix: 'app-' 
 // setTimeout(() => {
 //   audio.play()
 // }, 5000)
+
+// plain js without Vite
+// const worker = new Worker('./worker.js', {
+//   type: 'module'
+// })
+// const worker = new Worker(new URL('./dedicated-worker.js', import.meta.url), {
+//   type: 'module'
+// })
+
+// const data = new Array(10000).fill(9)
+
+// worker.addEventListener('message', (ev) => {
+//   console.log(data) // original
+//   console.log(ev.data) // data -> structured clone to worker -> worker -> structured clone to main
+//   worker.terminate()
+// })
+
+// worker.postMessage({id: 1, data})
+
+// unmount
+
+// setTimeout(() => {
+//   worker.terminate()
+// }, 10000)
+
+
+// plain js without Vite
+// const worker = new SharedWorker('./worker.js', {
+//   type: 'module'
+// })
+// const worker = new SharedWorker(new URL('./shared-worker.js', import.meta.url), {
+//   type: 'module'
+// })
+
+// worker.port.start()
+// worker.port.addEventListener('message', (ev) => {
+//   console.log(ev.data)
+// })
+
+// worker.port.postMessage({id: 1})
+
+// PWA -> offline:
+//  - data cache
+//  - cache html, js, css, image, ... resource
+
+// try {
+//   // /src -> scope '/'
+//   const registration = await navigator.serviceWorker.register(new URL('../service-worker.js', import.meta.url), {
+//     scope: '/'
+//   })
+
+//   setTimeout(async () => {
+//     console.log('request')
+
+//     const response = await fetch('/api/data.json')
+//     const data = await response.json() 
+//     console.log(data)
+
+//   }, 10000)
+
+// } catch (e) {
+//   console.error(e)
+// }
