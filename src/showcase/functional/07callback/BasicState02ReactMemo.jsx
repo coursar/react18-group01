@@ -1,4 +1,4 @@
-import { useState, memo } from "react"
+import { useState, memo, forwardRef } from "react"
 
 const BasicCallback02ReactMemo = () => {
     const [state, setState] = useState(0)
@@ -16,7 +16,7 @@ const BasicCallback02ReactMemo = () => {
     )
 }
 
-const Child = memo((props) => {
+const Child = memo(function Child(props) {
     return (
         <>
             <div>{props.childState}</div>
@@ -25,12 +25,12 @@ const Child = memo((props) => {
     )
 })
 
-const GrandChild = (props) => {
+const GrandChild = forwardRef(function GrandChild(props, forwardedRef) {
     return (
         <>
-            <div>Grand Child</div>
+            <div ref={forwardedRef}>Grand Child</div>
         </>
     )
-}
+})
 
 export default BasicCallback02ReactMemo
