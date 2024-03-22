@@ -1,10 +1,11 @@
-import { useState, memo, forwardRef, useCallback } from "react"
+import { useState, memo, forwardRef, useCallback, useMemo } from "react"
 
+// useCallback + memo -> good, but we have better solution: props.children
 const BasicCallback04ReactMemo = () => {
     const [state, setState] = useState(0)
-    const childState = {
+    const childState = useMemo(() => ({
         content: 'content'
-    }
+    }), [])
 
     // useCallback
     const handleClick = useCallback(() => {

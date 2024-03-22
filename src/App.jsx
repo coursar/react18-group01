@@ -1,13 +1,13 @@
 import { useRef } from 'react'
 import './App.css'
 import { ErrorBoundary, ErrorOnRender } from './components/shared/ErrorBoundary' // from './components/shared/ErrorBoundary/index.js(ts)'
-import BasicCallback04ReactMemo from './showcase/functional/07callback/BasicState04ReactMemo'
+import BasicContext01Debug from './showcase/functional/08context/BasicContext01Debug'
 
 function App() {
   return (
     <>
       <ErrorBoundary fallback={<div>main ooops!</div>}>
-        <BasicCallback04ReactMemo></BasicCallback04ReactMemo> 
+        <BasicContext01Debug></BasicContext01Debug>
       </ErrorBoundary>
     </>
   )
