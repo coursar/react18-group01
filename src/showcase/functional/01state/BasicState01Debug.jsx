@@ -4,6 +4,7 @@ const BasicState01Debug = () => {
     debugger
     const [state, setState] = useState(0)
 
+    // not use useCallback here
     const handleClick = () => {
         debugger
         setState(1)

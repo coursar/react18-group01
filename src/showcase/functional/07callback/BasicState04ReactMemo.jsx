@@ -1,8 +1,10 @@
 import { useState, memo, forwardRef, useCallback } from "react"
 
-const BasicCallback03ReactMemo = () => {
+const BasicCallback04ReactMemo = () => {
     const [state, setState] = useState(0)
-    const [childState, setChildState] = useState(0)
+    const childState = {
+        content: 'content'
+    }
 
     // useCallback
     const handleClick = useCallback(() => {
@@ -24,10 +26,10 @@ const BasicCallback03ReactMemo = () => {
 const Child = memo(function Child(props) {
     return (
         <>
-            <div>{props.childState}</div>
+            <div>{props.childState.content}</div>
             <button onClick={props.onClick}>click me (in child)</button>
         </>
     )
 })
 
-export default BasicCallback03ReactMemo
+export default BasicCallback04ReactMemo
