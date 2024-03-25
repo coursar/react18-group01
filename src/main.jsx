@@ -39,9 +39,7 @@ window.addEventListener('error', ev => {
 // Dev mode differs from Prod
 ReactDOM.createRoot(document.getElementById('root'), { identifierPrefix: 'app-' }).render(
   // <React.StrictMode>
-  <Provider store={}>
     <App />
-  </Provider>
   // </React.StrictMode>,
 )
 

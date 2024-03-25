@@ -6,6 +6,7 @@ const store = {
     state: {now: new Date()},
 }
 
+// subscribe
 const subscribe = (listener) => {
     debugger
     store.listeners.add(listener)
@@ -18,12 +19,16 @@ const subscribe = (listener) => {
 // const listener = () => {}
 // -> window.addEventListener('type', listener): store.listeners.add(listener)
 // -> window.removeEventListener('type', listener): () => unsubscribe: () => unsubscribe: () => unsubscribe: () => unsubscribe: () => unsubscribe: () => unsubscribe: () => unsubscribe: () => unsubscribe: () => unsubscribe
+// getState
 const getSnapshot = () => {
     return store.state // Object.freeze({...store.state}) // -> Object.is
 }
 
+// dispatch(updateAction)
 const update = () => {
+    // reducer
     store.state = {...store.state, now: new Date()}
+    // notify subscribers
     store.listeners.forEach(listener => listener())
 }
 
