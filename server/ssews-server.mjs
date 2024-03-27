@@ -57,21 +57,23 @@ const json = (next) => (req, res) => {
   });
 };
 
-// state on server
-let counter = 0;
-
 const handler = (req, res) => {
-  counter++;
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.flushHeaders();
 
-  if (counter % 2 === 0) {
-    res.statusCode = 400;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({value: counter}));
-    return;
-  }
+  const intervalId = setInterval(() => {
+    res.write(`data: ${JSON.stringify({value: new Date().toUTCString()})}\n\n`);
+  }, 5000);
 
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({value: counter}));
+  res.on('close', () => {
+    console.log('close')
+    clearInterval(intervalId);
+  });
+  res.on('end', () => {
+    console.log('end')
+    clearInterval(intervalId);
+  });
 };
 
 // middleware
